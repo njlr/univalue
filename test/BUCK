@@ -1,0 +1,22 @@
+cxx_binary(
+  name = 'test_json',
+  srcs = [
+    'test_json.cpp',
+  ],
+  deps = [
+    '//:univalue',
+  ],
+)
+
+cxx_binary(
+  name = 'unitester',
+  srcs = [
+    'unitester.cpp',
+  ],
+  compiler_flags = [
+    '-DJSON_TEST_SRC="test"',
+  ],
+  deps = [
+    '//:univalue',
+  ],
+)
